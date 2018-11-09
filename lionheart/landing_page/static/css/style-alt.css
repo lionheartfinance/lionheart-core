@@ -18,15 +18,15 @@ body {
     }
   @font-face {
     font-family: 'Buttons';
-    src: url("/Users/PeterDeNatale/Documents/GitHub/lionheart-core/lionheart/landing_page/static/fonts/Europa-Bold.otf") format("opentype");
+    src: url("../fonts/Europa-Bold.otf") format("opentype");
     }
   @font-face {
     font-family: 'HK Bold';
-    src: url("/Users/PeterDeNatale/Documents/GitHub/lionheart-core/lionheart/landing_page/static/fonts/HKGrotesk-Bold.otf") format("opentype");
+    src: url("../fonts/HKGrotesk-Bold.otf") format("opentype");
     }
     @font-face {
       font-family: 'Proxima Nova';
-      src: url("/Users/PeterDeNatale/Documents/GitHub/lionheart-core/lionheart/landing_page/static/fonts/Proxima-Nova.otf") format("opentype");
+      src: url("../fonts/Proxima-Nova.otf") format("opentype");
       }
   
   .navbar-brand {
