@@ -43,6 +43,7 @@
   </head>
   <body class="d-flex align-items-center bg-auth border-top border-top-2 border-white">
 
+   {% block content %}
     <!-- CONTENT
     ================================================== -->
     <div class="container-fluid">
@@ -58,9 +59,23 @@
           <p class="text-muted text-center mb-5">
             Free access to our dashboard.
           </p>
+
+          {% if form.errors %}
+              <p>Your username and password were incorrect. Please try again.</p>
+          {% endif %}
           
+          {% if next %}
+            {% if user.is_authenticated %}
+              <p>Your account doesn't have access to this page. To proceed,
+               please login with an account that has access.</p>
+              {% else %}
+              <p>Please login to see this page.</p>
+              {% endif %}
+            {% endif %}
+
           <!-- Form -->
-          <form>
+          <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
 
             <!-- Email address -->
             <div class="form-group">
@@ -69,7 +84,9 @@
               <label>Email Address</label>
 
               <!-- Input -->
-              <input type="email" class="form-control" placeholder="name@address.com">
+              <div class="input-group">
+               <input id="username" for='{{ form.username }}' class="form-control" placeholder='name@address.com' />
+              </div>
 
             </div>
 
@@ -97,23 +114,24 @@
               <div class="input-group input-group-merge">
 
                 <!-- Input -->
-                <input type="password" class="form-control" placeholder="Enter your password">
+                <input for='{{ form.username }}' type="password" class="form-control" placeholder="Enter your password" value="" />
+                <!-- {{ form.password }} -->
               </div>
             </div>
 
             <!-- Submit -->
-            <button class="btn btn-lg btn-block btn-dark mb-3">
-              Sign in
-            </button>
+            <input type="submit" value="Login" class="btn btn-lg btn-block btn-dark mb-3" />
+            <input type="hidden" name="next" value="{{ next }}" />
 
-            <!-- Link -->
-            <p class="text-center">
-              <small class="text-muted text-center">
-                Don't have an account yet? <a href="sign-up-cover.html">Sign up</a>.
-              </small>
-            </p>
-            
           </form>
+
+          <!-- Link -->
+          <p class="text-center">
+            <small class="text-muted text-center">
+              Don't have an account yet? <a href="sign-up-cover.html">Sign up</a>.
+            </small>
+          </p>
+            
 
         </div>
         <div class="col-12 col-md-7 col-lg-6 col-xl-8 d-none d-lg-block">
@@ -124,6 +142,7 @@
         </div>
       </div> <!-- / .row -->
     </div>
+{% endblock %}
 
     <!-- JAVASCRIPT
     ================================================== -->
