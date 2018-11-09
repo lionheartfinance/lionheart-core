@@ -18,15 +18,15 @@ body {
   }
 @font-face {
   font-family: 'Buttons';
-  src: url("Europa-Bold.otf") format("opentype");
+  src: url("https://github.com/lionheartfinance/lionheart-core/blob/master/lionheart/landing_page/static/fonts/Europa-Bold.otf") format("opentype");
   }
 @font-face {
   font-family: 'HK Bold';
-  src: url("HKGrotesk-Bold.otf") format("opentype");
+  src: url("https://github.com/lionheartfinance/lionheart-core/blob/master/lionheart/landing_page/static/fonts/HKGrotesk-Bold.otf") format("opentype");
   }
   @font-face {
     font-family: 'Proxima Nova';
-    src: url("Proxima Nova.otf") format("opentype");
+    src: url("https://github.com/lionheartfinance/lionheart-core/blob/master/lionheart/landing_page/static/fonts/Proxima-Nova.otf") format("opentype");
     }
 
 .navbar-brand {
