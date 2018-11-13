@@ -1,1 +1,1 @@
-web: gunicorn lionheart/lionheart.wsgi --log-file -
+web: gunicorn lionheart.wsgi --log-file -
