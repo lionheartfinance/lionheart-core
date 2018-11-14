@@ -35,43 +35,44 @@ The lionheart-core web application is structured as follows:
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
-├── **landing_page**
-│   ├── __init__.py
+├── landing_page
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── static
 │   │   ├── css
+│   │	│	├── <style.css files>
 │   │   ├── fonts
+│   │	│	├── <static font files>
 │   │   ├── img
+│   │	│	├── <static img files>
 │   │   └── js
+│   │	│	├── <static javascript goes here>
 │   ├── templates
 │   │   └── landing_page
-│   │       ├── index.html
-│   │       ├── plans.html
-│   │       └── register.html
+│   │       ├── * index.html    *
+│   │       ├── * plans.html    *
+│   │       └── * register.html *
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
 ├── lionheart
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── settings.cpython-37.pyc
-│   │   ├── urls.cpython-37.pyc
-│   │   └── wsgi.cpython-37.pyc
-│   ├── settings.py
-│   ├── static
-│   │   └── staticgoeshere.txt
-│   ├── urls.py
+│   ├── | settings.py |
+│   ├── | urls.py     |
 │   └── wsgi.py
 ├── manage.py
 ├── requirements.txt
 ├── templates
 │   └── registration
-│       ├── login.html
-│       └── signin.html
+│       ├── * login.html  *
+│       └── * signin.html *
 ```
+```text
+< >  = STATIC
+| |  = IMPORTANT -- BE CAREFUL
+* *  = TEMPLATES 
+```
+
 ### Settings.py
 ---
 ### Creating New Pages
