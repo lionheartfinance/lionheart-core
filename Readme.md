@@ -5,7 +5,11 @@ Please follow these standard practices when working on the Lionheart repository.
 
 ## Installation
 
-This repo connects directly to our Heroku dyno. Be VERY careful when pushing updates to the master branch, especially anything affecting the following files:
+The 'development' branch will house all development activity. **NEVER** push to the master branch. 
+
+The development branch will automatically deploy on our Heroku server as soon as it detects new pushes. Please ensure that the server is in a deployable state before pushing anything.  
+
+Be VERY careful when pushing updates to the development branch, especially anything affecting the following files (in any directory):
 - views.py
 - urls.py
 - settings.py
@@ -24,16 +28,14 @@ This repo connects directly to our Heroku dyno. Be VERY careful when pushing upd
 ---
 The lionheart-core web application is structured as follows: 
 ```bash
-├── Procfile
 ├── dash
-│   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
-├── landing_page
+├── **landing_page**
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
@@ -69,8 +71,6 @@ The lionheart-core web application is structured as follows:
 │   └── registration
 │       ├── login.html
 │       └── signin.html
-
-
 ```
 ### Settings.py
 ---
