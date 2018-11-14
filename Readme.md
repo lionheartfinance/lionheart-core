@@ -80,12 +80,40 @@ At the top level we have the 'app' folders, which include:
 
 'landing_page' (Housing views and templates for: registration page, home page, ALL static pages before being authorized {logged in}. 
 
-> Auth logic is housed within the 'landing_page' directory, however **auth templates are stored in templates/registration/login.html**).
+> Auth logic is housed within the 'landing_page' directory, however **auth templates are stored in templates/registration/**).
 
 ### Settings.py
 ---
 ### Creating New Pages
 ---
+Creating new pages within the application requires a few more steps than simply adding HTML/CSS and linking the files together. 
+
+1. **Creating the template**
+Create an HTML template, include the following at the very top of the file: 
+
+```HTML
+<!doctype html>
+{% load static %}
+```
+
+This tells the Django/WhiteNoise to load the contents of the static folder, allowing us to implement custom css, fonts, static images, etc. without loading the static you will be greeted with an error page reminding you to add this line. 
+
+Once the template has been created/fleshed out save it in the 'app'/templates/'app'/ directory – Where 'app' = landing_page, dash, etc.
+
+2. **Creating the URL routing**
+Open lionheart/urls.py and **ADD** the following line to the 'urlpatterns' dict
+```python
+urlpatterns = [
+	...
+    path('PATH_URL/', include('APP_NAME.urls')),
+]
+```
+> Where 'PATH_URL' = Link in browser, for example: www.lionheart.com/login = login/
+> *index = ''*
+> Where APP_NAME = 
+
+
+
 ### Linking Static Content
 ---
 ### Deploying to Heroku
