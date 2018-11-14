@@ -5,7 +5,11 @@ Please follow these standard practices when working on the Lionheart repository.
 
 ## Installation
 
-This repo connects directly to our Heroku dyno. Be VERY careful when pushing updates to the master branch, especially anything affecting the following files:
+The 'development' branch will house all development activity. **NEVER** push to the master branch. 
+
+The development branch will automatically deploy on our Heroku server as soon as it detects new pushes. Please ensure that the server is in a deployable state before pushing anything.  
+
+Be VERY careful when pushing updates to the development branch, especially anything affecting the following files (in any directory):
 - views.py
 - urls.py
 - settings.py
@@ -24,9 +28,7 @@ This repo connects directly to our Heroku dyno. Be VERY careful when pushing upd
 ---
 The lionheart-core web application is structured as follows: 
 ```bash
-├── Procfile
 ├── dash
-│   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
@@ -34,44 +36,45 @@ The lionheart-core web application is structured as follows:
 │   ├── urls.py
 │   └── views.py
 ├── landing_page
-│   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── static
 │   │   ├── css
+│   │	│	├── <style.css files>
 │   │   ├── fonts
+│   │	│	├── <static font files>
 │   │   ├── img
+│   │	│	├── <static img files>
 │   │   └── js
+│   │	│	├── <static javascript goes here>
 │   ├── templates
 │   │   └── landing_page
-│   │       ├── index.html
-│   │       ├── plans.html
-│   │       └── register.html
+│   │       ├── * index.html    *
+│   │       ├── * plans.html    *
+│   │       └── * register.html *
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
 ├── lionheart
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── settings.cpython-37.pyc
-│   │   ├── urls.cpython-37.pyc
-│   │   └── wsgi.cpython-37.pyc
-│   ├── settings.py
-│   ├── static
-│   │   └── staticgoeshere.txt
-│   ├── urls.py
+│   ├── | settings.py |
+│   ├── | urls.py     |
 │   └── wsgi.py
 ├── manage.py
 ├── requirements.txt
 ├── templates
 │   └── registration
-│       ├── login.html
-│       └── signin.html
-
-
+│       ├── * login.html  *
 ```
+```text
+< >  = STATIC
+| |  = IMPORTANT -- BE CAREFUL
+* *  = TEMPLATES 
+```
+
+While the application structure may appear confusing at first, it is actually relatively simple. 
+At the top level we have the 'app' folders, which include 'dash' (Housing the views, templates, and logic for our main application), 'landing_page' (Housing views and templates for: registration page, home page, ALL static pages before being authorized {logged in}. Auth logic is housed within the 'landing_page' directory, however **auth templates are stored in templates/registration/login.html**).
+
 ### Settings.py
 ---
 ### Creating New Pages
