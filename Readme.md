@@ -111,8 +111,6 @@ urlpatterns = [
 ```
 > Where 'PATH_URL' = Link in browser, for example: www.lionheart.com/login = login/
 >
-> *index = ''*
->
 > Where APP_NAME = Name of app where template is located, for example: 'landing_page' or 'dash'
 
 Edit APP_NAME/urls.py and add the following:
