@@ -14,7 +14,7 @@ This repo connects directly to our Heroku dyno. Be VERY careful when pushing upd
 ## Documentation
 
 > Table of Contents
-> 1. [Application Structure](##)
+> 1. [Application Structure](## Application Structure)
 > 2. [Settings.py](##)
 > 3. [Creating New Pages](##)
 > 4. [Linking Static Content](##)
@@ -45,9 +45,9 @@ The lionheart-core web application is structured as follows:
 │   │   └── js
 │   ├── templates
 │   │   └── landing_page
-|   |       ├── index.html
-|   |       ├── plans.html
-|   |       └── register.html
+│   │       ├── index.html
+│   │       ├── plans.html
+│   │       └── register.html
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
