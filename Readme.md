@@ -65,13 +65,15 @@ The lionheart-core web application is structured as follows:
 ├── templates
 │   └── registration
 │       ├── * login.html  *
-│       └── * signin.html *
 ```
 ```text
 < >  = STATIC
 | |  = IMPORTANT -- BE CAREFUL
 * *  = TEMPLATES 
 ```
+
+While the application structure may appear confusing at first, it is actually relatively simple. 
+At the top level we have the 'app' folders, which include 'dash' (Housing the views, templates, and logic for our main application), 'landing_page' (Housing views and templates for: registration page, home page, ALL static pages before being authorized {logged in}. Auth logic is housed within the 'landing_page' directory, however **auth templates are stored in templates/registration/login.html**).
 
 ### Settings.py
 ---
