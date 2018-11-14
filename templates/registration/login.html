@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -15,7 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../../static/css/signin.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" ></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
@@ -32,12 +33,12 @@
           <div id="myNav" class="overlay">
               <a href="javascript:void(0)" class="close hairline" onclick="closeNav()"></a>
               <div class="overlay-content">
-                  <a href="index.html">Home</a>
+                  <a href="''">Home</a>
                   <a href="offerings.html">Offerings</a>
                   <a href="how.html">How it Works</a>
                   <a href="pricing.html">Pricing</a>
-                  <center><a href="register.html"><div style="font-size: 0.5em;margin-top: 30px;cursor: pointer;width: 70% !important;" class="register">Invest Now</div></a></center>
-                  <center><a href="signin.html" onclick="closeNav()"><div style="border-color: #1C2227 !important; color: #1C2227 !important;font-size: 0.5em;margin-top: 10px;cursor: pointer;width: 70% !important;" class="login">Sign In</div></a></center>
+                  <center><a href="/register"><div style="font-size: 0.5em;margin-top: 30px;cursor: pointer;width: 70% !important;" class="register">Invest Now</div></a></center>
+                  <center><a href="/accounts/login" onclick="closeNav()"><div style="border-color: #1C2227 !important; color: #1C2227 !important;font-size: 0.5em;margin-top: 10px;cursor: pointer;width: 70% !important;" class="login">Sign In</div></a></center>
                 </div>
             </div>
     
@@ -68,10 +69,10 @@
                 </ul>
                 <ul class="navbar-nav navbar-right">
                   <li class="nav-item">
-                    <a class="nav-link login" href="signin.html">Sign In</a>
+                    <a class="nav-link login" href="/accounts/login">Sign In</a>
                   </li>
                   <li class="nav-item">
-                    <a style="color: #f8f5ef !important;" class="nav-link register" href="register.html">Invest Now</a>
+                    <a style="color: #f8f5ef !important;" class="nav-link register" href="/register">Invest Now</a>
                   </li>
                 </ul>
                 <div style="clear:both;"></div>

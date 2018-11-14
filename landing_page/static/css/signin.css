@@ -5,30 +5,30 @@ body {
   background: #122c3a;
 }
 
-@font-face {
-  font-family: 'HK Bold Italic';
-  src: url("HKGrotesk-BoldItalic.otf") format("opentype");
-  }
-@font-face {
-  font-family: 'TT Norms';
-  src: url("tt_norms_regular.otf") format("opentype");
-  }
-@font-face {
-  font-family: 'TT Norms Medium';
-  src: url("tt_norms_medium.otf") format("opentype");
-  }
-@font-face {
-  font-family: 'Buttons';
-  src: url("Europa-Bold.otf") format("opentype");
-  }
-@font-face {
-  font-family: 'HK Bold';
-  src: url("HKGrotesk-Bold.otf") format("opentype");
-  }
-  @font-face {
-    font-family: 'Proxima Nova';
-    src: url("Proxima Nova.otf") format("opentype");
+ @font-face {
+    font-family: 'HK Bold Italic';
+    src: url("HKGrotesk-BoldItalic.otf") format("opentype");
     }
+  @font-face {
+    font-family: 'TT Norms';
+    src: url("tt_norms_regular.otf") format("opentype");
+    }
+  @font-face {
+    font-family: 'TT Norms Medium';
+    src: url("tt_norms_medium.otf") format("opentype");
+    }
+  @font-face {
+    font-family: 'Buttons';
+    src: url("../fonts/Europa-Bold.otf") format("opentype");
+    }
+  @font-face {
+    font-family: 'HK Bold';
+    src: url("../fonts/HKGrotesk-Bold.otf") format("opentype");
+    }
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url("../fonts/Proxima-Nova.otf") format("opentype");
+      }
 
 .form-signin {
   width: 100%;
