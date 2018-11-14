@@ -101,6 +101,7 @@ This tells the Django/WhiteNoise to load the contents of the static folder, allo
 Once the template has been created/fleshed out save it in the 'app'/templates/'app'/ directory – Where 'app' = landing_page, dash, etc.
 
 2. **Creating the URL routing**
+
 Open lionheart/urls.py and **ADD** the following line to the 'urlpatterns' dict
 ```python
 urlpatterns = [
@@ -109,22 +110,47 @@ urlpatterns = [
 ]
 ```
 > Where 'PATH_URL' = Link in browser, for example: www.lionheart.com/login = login/
+>
 > *index = ''*
-> Where APP_NAME = 
+>
+> Where APP_NAME = Name of app where template is located, for example: 'landing_page' or 'dash'
 
+Edit APP_NAME/urls.py and add the following:
 
+```python
+urlpatterns = [
+    ...
+    path('PATH_URL', views.PATH_URL, name='PATH_URL'),
+]
+```
+> Where PATH_URL = PATH_URL from previous step.
+
+Now open APP_NAME/views.py and add:
+
+```python
+def PATH_URL(request):
+	return render(request, 'APP_NAME/TEMPLATE_NAME.html')
+```
+> Where APP_NAME = subdirectory that templates are stored in (i.e. landing_page/templates/landing_page/ ...)
+>
+> This function defines the URL request and renders the template using the Jinja2 templating engine.
+
+Now when you visit app_url.com/PATH_URL Django will check the lionheart/urls.py file, where it will be sent to APP_NAME.urls (for instance, landing_page/urls.py. At that point it will look for PATH_URL, which will tell Django to render views.PATH_URL).
 
 ### Linking Static Content
 ---
+
+COMING SOON
+
+
 ### Deploying to Heroku
 ---
 
+Simply push to the 'development' branch and Heroku will automtically redeploy the server. 
+
+> Make sure the build is deployable locally **before** deploying to Heroku, else it will result in a build failure.
  
-## Contributing
-
-Create separate branch for all edits, test in a local dev environment, push to lionheart-core.
-
-Heroku will automatically (not set up yet) pull the update from GitHub and load to the staging (dev) server located at:
+The staging (dev) server located at:
 
 >[Lionheart Dev Server](lionheart-core-dev.herokuapp.com)
 
