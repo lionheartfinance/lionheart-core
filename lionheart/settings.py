@@ -28,8 +28,10 @@ SECRET_KEY = 'm_@qxj0%$$tn_k=kgyp%em+j*apfyh8&59znt%4v86+j6ddcj-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
